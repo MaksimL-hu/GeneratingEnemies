@@ -433,7 +433,6 @@ MonoBehaviour:
   - {fileID: 2721003575674652062, guid: 50f68f53ecf4e204e93dfe53138b7632, type: 3}
   - {fileID: 3030940206519900961, guid: e8fe61fc5d612b143ac8159b8dcb5b11, type: 3}
   - {fileID: 2651629505321762438, guid: fbb9e6dea37d081449ecd0f42d3b27e4, type: 3}
-  - {fileID: 5294846706352027421, guid: 7c79de11d53aa5d41a03eed3313a261f, type: 3}
   - {fileID: 7881934980941695659, guid: 1e9aac9166a959d449d8d82f1d7b9c36, type: 3}
   _delay: 2
 --- !u!1 &2106129409
