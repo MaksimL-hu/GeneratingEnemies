@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        _animator.SetBool("Run", true);
+        string animatorRun = "Run";
+
+        _animator.SetBool(animatorRun, true);
 
         if (direction.x < 0)
             _spriteRenderer.flipX = true;
