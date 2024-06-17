@@ -4,7 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] _spawnPoints;
-    [SerializeField] private GameObject[] _enemyPrefabs;
+    [SerializeField] private Enemy[] _enemyPrefabs;
     [SerializeField] private float _delay = 2f;
 
     private void Start()
@@ -20,6 +20,7 @@ public class Spawner : MonoBehaviour
         while (_isSpawn)
         {
             Spawn();
+
             yield return delay;
         }
     }
@@ -34,7 +35,7 @@ public class Spawner : MonoBehaviour
         enemy.Move(GetRandomDirection());
     }
 
-    private GameObject GetRandomEnemyPrefab()
+    private Enemy GetRandomEnemyPrefab()
     {
         return _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
     }

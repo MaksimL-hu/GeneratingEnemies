@@ -428,12 +428,12 @@ MonoBehaviour:
   - {fileID: 665484395}
   - {fileID: 533836251}
   _enemyPrefabs:
-  - {fileID: 8497213494850627085, guid: f16d86825186f6d4a9a8753787c4fd96, type: 3}
-  - {fileID: 5683163213608105535, guid: 18a6af39654aa3b4ebbe821c179bc0e0, type: 3}
-  - {fileID: 2721003575674652062, guid: 50f68f53ecf4e204e93dfe53138b7632, type: 3}
-  - {fileID: 3030940206519900961, guid: e8fe61fc5d612b143ac8159b8dcb5b11, type: 3}
-  - {fileID: 2651629505321762438, guid: fbb9e6dea37d081449ecd0f42d3b27e4, type: 3}
-  - {fileID: 7881934980941695659, guid: 1e9aac9166a959d449d8d82f1d7b9c36, type: 3}
+  - {fileID: -9043186866428116897, guid: f16d86825186f6d4a9a8753787c4fd96, type: 3}
+  - {fileID: -1025195141566596039, guid: 18a6af39654aa3b4ebbe821c179bc0e0, type: 3}
+  - {fileID: 1816415850907292080, guid: 50f68f53ecf4e204e93dfe53138b7632, type: 3}
+  - {fileID: 3422525316293186929, guid: e8fe61fc5d612b143ac8159b8dcb5b11, type: 3}
+  - {fileID: 8493965919422242689, guid: fbb9e6dea37d081449ecd0f42d3b27e4, type: 3}
+  - {fileID: -3106125150797642156, guid: 1e9aac9166a959d449d8d82f1d7b9c36, type: 3}
   _delay: 2
 --- !u!1 &2106129409
 GameObject:
