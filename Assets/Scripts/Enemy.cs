@@ -10,33 +10,33 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    private Coroutine _movingCoroutine;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
     }
 
-    public void Move(Vector3 direction)
+    public void Move(Transform target)
     {
         string animatorRun = "Run";
 
         _animator.SetBool(animatorRun, true);
-
-        if (direction.x < 0)
-            _spriteRenderer.flipX = true;
-        else 
-            _spriteRenderer.flipX = false;
-
-        StartCoroutine(Moving(direction));
+        _movingCoroutine = StartCoroutine(Moving(target));
     }
 
-    private IEnumerator Moving(Vector3 direction)
+    private IEnumerator Moving(Transform target)
     {
-        bool _isMove = true;
-
-        while (_isMove)
+        while (transform.position != target.position)
         {
-            transform.Translate(direction * _speed * Time.deltaTime);
+            if(target.position.x - transform.position.x < 0f)
+                _spriteRenderer.flipX = true;
+            else
+                _spriteRenderer.flipX = false;
+
+            transform.position = Vector3.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
+
             yield return null;
         }
     }
