@@ -6,11 +6,11 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
-
     [SerializeField] private Animator _animator;
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private Coroutine _movingCoroutine;
+    private readonly int Run = Animator.StringToHash(nameof(Run));
 
     private void Awake()
     {
@@ -20,9 +20,7 @@ public class Enemy : MonoBehaviour
 
     public void Move(Transform target)
     {
-        string animatorRun = "Run";
-
-        _animator.SetBool(animatorRun, true);
+        _animator.SetBool(EnemyAnimatorData.Run, true);
         _movingCoroutine = StartCoroutine(Moving(target));
     }
 
@@ -30,10 +28,7 @@ public class Enemy : MonoBehaviour
     {
         while (transform.position != target.position)
         {
-            if(target.position.x - transform.position.x < 0f)
-                _spriteRenderer.flipX = true;
-            else
-                _spriteRenderer.flipX = false;
+            _spriteRenderer.flipX = target.position.x - transform.position.x < 0f;
 
             transform.position = Vector3.MoveTowards(transform.position, target.position, _speed * Time.deltaTime);
 
