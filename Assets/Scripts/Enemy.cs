@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
     private Coroutine _movingCoroutine;
-    private readonly int Run = Animator.StringToHash(nameof(Run));
 
     private void Awake()
     {
@@ -21,7 +20,16 @@ public class Enemy : MonoBehaviour
     public void Move(Transform target)
     {
         _animator.SetBool(EnemyAnimatorData.Run, true);
-        _movingCoroutine = StartCoroutine(Moving(target));
+
+        if (_movingCoroutine == null)
+        {
+            _movingCoroutine = StartCoroutine(Moving(target));
+        }
+        else
+        {
+            StopCoroutine(_movingCoroutine);
+            _movingCoroutine = StartCoroutine(Moving(target));
+        }
     }
 
     private IEnumerator Moving(Transform target)
